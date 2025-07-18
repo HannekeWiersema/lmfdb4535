@@ -77,6 +77,23 @@ Rank not yet determined.
 <b>Rank:</b> \( {{ cl.rank }} \)
 {% endif %}
 
+{% if cl.has_lfunction %}
+<h2>{{KNOWL('g2c.lfunction', title='L-function')}} data</h2>
+<p>
+<table>
+    <tr><td>&nbsp;</td></tr>
+    <tr><td valign=top> {{ KNOWL('g2c.bad_lfactors', title='Bad L-factors') }}:<td>
+        <table id = "bad_lfactors_table">
+        <tr>
+            <th>Prime</th>
+            <th align="left">L-Factor</th>
+        </tr>
+<!--         {% for c in info.bad_lfactors_pretty %} -->
+        <tr><td class="center">\({{ "hoi" }}\)</a></td><td align="left">\({{ "hoi" }}\)</td></tr>
+<!--         {% endfor %} -->
+        </table>
+    </tr>
+{% endif %}
 
 <h2>{{ KNOWL('ec.isogeny_matrix',title='Isogeny matrix') }}</h2>
 
