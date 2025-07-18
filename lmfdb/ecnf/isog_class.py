@@ -4,7 +4,7 @@ from lmfdb.utils import encode_plot, names_and_urls, web_latex
 from lmfdb.logger import make_logger
 from lmfdb.ecnf.WebEllipticCurve import web_ainvs, FIELD
 from lmfdb.number_fields.web_number_field import field_pretty, nf_display_knowl
-from sage.all import latex, Matrix, ZZ, Infinity
+from sage.all import latex, Matrix, ZZ, Infinity, nth_prime
 from lmfdb.lfunctions.LfunctionDatabase import (get_lfunction_by_url,
                                         get_instances_by_Lhash_and_trace_hash)
 
