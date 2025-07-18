@@ -148,8 +148,10 @@ class ECNF_isoclass():
             exclude.add(lfun_url.lstrip('/L/').rstrip('/'))
             self.friends += names_and_urls(instances, exclude=exclude)
             self.friends += [('L-function', self.urls['Lfunction'])]
+            self.has_lfunction = True
         else:
             self.friends += [('L-function not available', "")]
+            self.has_lfunction = False
 
         self.properties = [('Base field', self.field_name),
                            ('Label', self.class_label),
