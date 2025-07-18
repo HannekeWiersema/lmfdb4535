@@ -1,6 +1,6 @@
 from flask import url_for
 from lmfdb import db
-from lmfdb.utils import encode_plot, names_and_urls, web_latex
+from lmfdb.utils import encode_plot, names_and_urls, web_latex, list_to_factored_poly_otherorder
 from lmfdb.logger import make_logger
 from lmfdb.ecnf.WebEllipticCurve import web_ainvs, FIELD
 from lmfdb.number_fields.web_number_field import field_pretty, nf_display_knowl
