@@ -88,11 +88,39 @@ Rank not yet determined.
             <th>Prime</th>
             <th align="left">L-Factor</th>
         </tr>
-<!--         {% for c in info.bad_lfactors_pretty %} -->
-        <tr><td class="center">\({{ "hoi" }}\)</a></td><td align="left">\({{ "hoi" }}\)</td></tr>
-<!--         {% endfor %} -->
+        {% for c in cl.bad_lfactors_pretty %}
+        <tr><td class="center">\({{ c[0] }}\)</a></td><td align="left">\({{ c[1] }}\)</td></tr>
+        {% endfor %}
         </table>
     </tr>
+    <tr><td>&nbsp;</td></tr>
+    <tr><td valign=top> {{ KNOWL('g2c.good_lfactors', title='Good L-factors') }}:<td>
+        <table id = "good_lfactors_table">
+        <tr>
+            <th>Prime</th>
+            <th align="left">L-Factor</th>
+            <th align="left">Isogeny Class over \(\mathbb{F}_p\)</th>
+        </tr>
+        {% for c in cl.good_lfactors_pretty_with_label %}
+        <tr>
+            <td class="center">\({{ c[0] }}\)</a></td>
+            <td align="left">\( {{ c[1] }}\)</td>
+            <td>
+              {% if c[3] == '' %}
+                {{ c[2] }}
+              {% else %}
+                <a href="{{ c[3] }}">{{ c[2] }}</a>
+              {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+        <tr><td>$\cdots$</td><td>$\cdots$</td><td>$\cdots$</td>
+        </table>
+    </tr>
+    <tr><td>&nbsp;</td></tr>
+    <tr><td colspan="2">See <a href="{{cl.lfunction_link}}">L-function page</a> for more information</td></tr>
+</table>
+{% endif %}
 {% endif %}
 
 <h2>{{ KNOWL('ec.isogeny_matrix',title='Isogeny matrix') }}</h2>
